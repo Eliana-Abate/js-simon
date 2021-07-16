@@ -67,7 +67,7 @@ setTimeout(function() {
 
     alert('L\'utente ha ricordato ' + remNumbers.length + ' numeri su 5.' + ' Lista numeri ricordati: ' + remNumbers);
 
-}, 3000);
+}, 30000);
 
 
 
