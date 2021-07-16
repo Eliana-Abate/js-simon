@@ -11,7 +11,9 @@ Dopo che sono stati inseriti i 5 numeri, il software mostra in un alert quanti e
 //TODO 4. Imposto setTimeout affinché la funzione chieda i numeri all'utente dopo 30 secondi da quando l'utente clicca l'ok dell'alert
 //TODO 5. Creo variabile per chiedere all'utente di inserire i 5 numeri visualizzati
 //TODO 6. Creo array vuoto per memorizzare i numeri inseriti dall'utente e pongo la condizione che venga riempito fino ad un massimo di 5 elementi
-//TODO 7. Controllo se gli elementi dell'array utente sono presenti nell'array dei numeri casuali
+//TODO 7. Controllo se il numero scritto dall'utente è presente nell'array dei numeri casuali
+//TODO 8. Creo un array dove inserire i numeri ricordati e pongo la condizione che vengano registrati una sola volta
+//TODO 9. Alert con totale numeri indovinati ed elenco numeri indovinati
 
 
 //! 1. 
@@ -23,13 +25,12 @@ function cpuRandom(){
 
 
 //! 2. 
-var numberList = []; 
-var randomNumbers = cpuRandom();
+var numberList = [];
 
 
 while (numberList.length < 5) {
 
-    randomNumbers = cpuRandom();
+    var randomNumbers = cpuRandom();
 
     if (!numberList.includes(randomNumbers)){
 
@@ -44,34 +45,36 @@ console.log(numberList);
 alert('Memorizza i seguenti numeri: ' + numberList);
 
 
-//! 4. + 5. + 6.
-var userList = [];
-
+//! 4. + 5. + 6. + 7. + 8. + 9.
 setTimeout(function() {
-  
-    var userArray = [];
+
+    var userList = [];
+    var remNumbers = [];
 
     do {
-        var user = parseInt(prompt('Inserisci i 5 numeri memorizzati'));
-        userArray.push(user);
-    } while (userArray.length < 5) 
 
-    console.log(userArray);
+        var userNumber = parseInt(prompt('Inserisci i 5 numeri memorizzati'));
+        userList.push(userNumber);
+            
+        if (numberList.includes(userNumber) && !remNumbers.includes(userNumber)){
+            remNumbers.push(userNumber);
+        }
 
-}, 30000);
+    } while (userList.length < 5) 
+
+    console.log('Numeri scritti dall\'utente: ' + userList);
+    console.log('Lista numeri corretti ricordati: ' + remNumbers);
+
+    alert('L\'utente ha ricordato ' + remNumbers.length + ' numeri su 5.' + ' Lista numeri ricordati: ' + remNumbers);
+
+}, 3000);
 
 
 
 
-/*
-var rememberedNumbers = [];
 
-if (userList.includes(randomNumbers)){
-    rememberedNumbers.push(randomNumbers);
-}
 
-console.log('L\'utente è riuscito a ricordare i seguenti numeri: ' + rememberedNumbers);
-*/
+
 
 
 
