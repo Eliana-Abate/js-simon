@@ -8,6 +8,7 @@ Dopo che sono stati inseriti i 5 numeri, il software mostra in un alert quanti e
 //TODO 1. Creo funzione per randomizzare i numeri
 //TODO 2. Creo un array vuoto in cui inserire i numeri generati casualmente e pongo la condizione di inserire solo numeri diversi tra loro
 //TODO 3. Stampo l'array di numeri casuali nell'alert
+//TODO 4. Creo funzione per chiedere all'utente di inserire i 5 numeri visualizzati
 
 
 //! 1. 
@@ -19,9 +20,7 @@ function cpuRandom(){
 
 
 //! 2. 
-
 var numberList = []; 
-
 var randomNumbers = cpuRandom();
 
 
@@ -35,6 +34,16 @@ while (numberList.length < 5) {
     } 
 }
 
-console.log(numberList); 
+console.log(numberList);
 
+
+//! 3.
 alert('Memorizza i seguenti numeri: ' + numberList);
+
+
+//! 4. 
+function writeNumbers() {
+    var userNumbers = parseInt(prompt('Inserisci i 5 numeri memorizzati'));
+
+    return userNumbers;
+}
