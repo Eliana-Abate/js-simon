@@ -10,7 +10,7 @@ Dopo che sono stati inseriti i 5 numeri, il software mostra in un alert quanti e
 //TODO 3. Stampo l'array di numeri casuali nell'alert
 //TODO 4. Creo funzione per chiedere all'utente di inserire i 5 numeri visualizzati
 //TODO 5. Creo array vuoto per memorizzare i numeri inseriti dall'utente e pongo la condizione che venga riempito fino ad un massimo di 5 elementi
-
+//TODO 6. Pongo i termini affinché la funzione che chiede i numeri all'utente sia avviata dopo 30 secondi da quando l'utente clicca l'ok dell'alert
 
 //! 1. 
 function cpuRandom(){
@@ -40,6 +40,10 @@ console.log(numberList);
 
 //! 3.
 alert('Memorizza i seguenti numeri: ' + numberList);
+
+
+//! 6. 
+setTimeout(writeNumbers, 30000) 
 
 
 //! 4. 
