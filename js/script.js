@@ -8,9 +8,11 @@ Dopo che sono stati inseriti i 5 numeri, il software mostra in un alert quanti e
 //TODO 1. Creo funzione per randomizzare i numeri
 //TODO 2. Creo un array vuoto in cui inserire i numeri generati casualmente e pongo la condizione di inserire solo numeri diversi tra loro
 //TODO 3. Stampo l'array di numeri casuali nell'alert
-//TODO 4. Creo funzione per chiedere all'utente di inserire i 5 numeri visualizzati
-//TODO 5. Creo array vuoto per memorizzare i numeri inseriti dall'utente e pongo la condizione che venga riempito fino ad un massimo di 5 elementi
-//TODO 6. Pongo i termini affinché la funzione che chiede i numeri all'utente sia avviata dopo 30 secondi da quando l'utente clicca l'ok dell'alert
+//TODO 4. Imposto setTimeout affinché la funzione chieda i numeri all'utente dopo 30 secondi da quando l'utente clicca l'ok dell'alert
+//TODO 5. Creo variabile per chiedere all'utente di inserire i 5 numeri visualizzati
+//TODO 6. Creo array vuoto per memorizzare i numeri inseriti dall'utente e pongo la condizione che venga riempito fino ad un massimo di 5 elementi
+
+
 
 //! 1. 
 function cpuRandom(){
@@ -42,28 +44,22 @@ console.log(numberList);
 alert('Memorizza i seguenti numeri: ' + numberList);
 
 
-//! 6. 
-setTimeout(writeNumbers, 30000) 
+//! 4. + 5. + 6. 
+setTimeout(function() {
+  
+    var userList = [];
 
-
-//! 4. 
-function writeNumbers() {
-    var user = parseInt(prompt('Inserisci i 5 numeri memorizzati'));
-
-    return user;
-}
-
-
-//! 5. 
-var userList = []; 
-var userNumbers = writeNumbers();
-
-
-do {
-    userNumbers = writeNumbers();
-    userList.push(userNumbers);
-} while (userList.length < 5) 
+    do {
+        var user = parseInt(prompt('Inserisci i 5 numeri memorizzati'));
+        userList.push(user);
+    } while (userList.length < 5) 
 
 console.log(userList);
+}, 30000);
+
+
+
+
+
 
 
