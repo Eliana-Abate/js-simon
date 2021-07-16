@@ -11,7 +11,7 @@ Dopo che sono stati inseriti i 5 numeri, il software mostra in un alert quanti e
 //TODO 4. Imposto setTimeout affinché la funzione chieda i numeri all'utente dopo 30 secondi da quando l'utente clicca l'ok dell'alert
 //TODO 5. Creo variabile per chiedere all'utente di inserire i 5 numeri visualizzati
 //TODO 6. Creo array vuoto per memorizzare i numeri inseriti dall'utente e pongo la condizione che venga riempito fino ad un massimo di 5 elementi
-
+//TODO 7. Controllo se gli elementi dell'array utente sono presenti nell'array dei numeri casuali
 
 
 //! 1. 
@@ -44,21 +44,34 @@ console.log(numberList);
 alert('Memorizza i seguenti numeri: ' + numberList);
 
 
-//! 4. + 5. + 6. 
+//! 4. + 5. + 6.
+var userList = [];
+
 setTimeout(function() {
   
-    var userList = [];
+    var userArray = [];
 
     do {
         var user = parseInt(prompt('Inserisci i 5 numeri memorizzati'));
-        userList.push(user);
-    } while (userList.length < 5) 
+        userArray.push(user);
+    } while (userArray.length < 5) 
 
-console.log(userList);
+    console.log(userArray);
+
 }, 30000);
 
 
 
+
+/*
+var rememberedNumbers = [];
+
+if (userList.includes(randomNumbers)){
+    rememberedNumbers.push(randomNumbers);
+}
+
+console.log('L\'utente è riuscito a ricordare i seguenti numeri: ' + rememberedNumbers);
+*/
 
 
 
