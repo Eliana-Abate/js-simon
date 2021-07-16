@@ -9,6 +9,7 @@ Dopo che sono stati inseriti i 5 numeri, il software mostra in un alert quanti e
 //TODO 2. Creo un array vuoto in cui inserire i numeri generati casualmente e pongo la condizione di inserire solo numeri diversi tra loro
 //TODO 3. Stampo l'array di numeri casuali nell'alert
 //TODO 4. Creo funzione per chiedere all'utente di inserire i 5 numeri visualizzati
+//TODO 5. Creo array vuoto per memorizzare i numeri inseriti dall'utente e pongo la condizione che venga riempito fino ad un massimo di 5 elementi
 
 
 //! 1. 
@@ -43,7 +44,22 @@ alert('Memorizza i seguenti numeri: ' + numberList);
 
 //! 4. 
 function writeNumbers() {
-    var userNumbers = parseInt(prompt('Inserisci i 5 numeri memorizzati'));
+    var user = parseInt(prompt('Inserisci i 5 numeri memorizzati'));
 
-    return userNumbers;
+    return user;
 }
+
+
+//! 5. 
+var userList = []; 
+var userNumbers = writeNumbers();
+
+
+do {
+    userNumbers = writeNumbers();
+    userList.push(userNumbers);
+} while (userList.length < 5) 
+
+console.log(userList);
+
+
