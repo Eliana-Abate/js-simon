@@ -7,7 +7,7 @@ Dopo che sono stati inseriti i 5 numeri, il software mostra in un alert quanti e
 
 //TODO 1. Creo funzione per randomizzare i numeri
 //TODO 2. Creo un array vuoto in cui inserire i numeri generati casualmente e pongo la condizione di inserire solo numeri diversi tra loro
-
+//TODO 3. Stampo l'array di numeri casuali nell'alert
 
 
 //! 1. 
@@ -35,5 +35,6 @@ while (numberList.length < 5) {
     } 
 }
 
-
 console.log(numberList); 
+
+alert('Memorizza i seguenti numeri: ' + numberList);
